@@ -1,5 +1,4 @@
 'use client'
-import GradientText from '@/blocks/TextAnimations/GradientText/GradientText'
 import { useState } from 'react'
 
 import { api } from '@/trpc/react'
@@ -19,9 +18,8 @@ export default function EmailInput() {
     e.preventDefault()
     console.log({ email, terms })
     if (terms) return
+    createEmail.mutate({ email, })
   }
-
-  console.log(terms)
 
   return (
     <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-99'>
