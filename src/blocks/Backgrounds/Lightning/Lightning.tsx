@@ -28,7 +28,7 @@ const Lightning: React.FC<LightningProps> = ({
     if (!canvas) return;
 
     const resizeCanvas = () => {
-      canvas.width = isMobile ?  canvas.clientWidth > 512 ? 512 : canvas.clientWidth : canvas.clientWidth;
+      canvas.width = canvas.clientWidth;
       canvas.height = canvas.clientHeight;
     };
     resizeCanvas();
