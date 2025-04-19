@@ -7,8 +7,8 @@ export default function Background() {
       hue={250}
       xOffset={0}
       speed={1.2}
-      intensity={0.8}
-      size={0.4}
+      intensity={1.8}
+      size={1.4}
     />
   )
 }

@@ -29,7 +29,6 @@ const Lightning: React.FC<LightningProps> = ({
       canvas.width = canvas.clientWidth;
       canvas.height = canvas.clientHeight;
     };
-    console.log(canvas.clientWidth, canvas.clientHeight)
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
