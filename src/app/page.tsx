@@ -5,7 +5,7 @@ import EmailInput from './_components/email-input'
 export default async function Home() {
   return (
     <HydrateClient>
-      <main className='relative flex h-screen w-screen flex-col items-center justify-center bg-black overflow-hidden'>
+      <main className='relative flex h-screen w-screen flex-col items-center justify-center bg-black'>
         <Background />
         <EmailInput />
       </main>
