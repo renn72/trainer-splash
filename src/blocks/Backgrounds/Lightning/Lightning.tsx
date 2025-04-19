@@ -10,6 +10,7 @@ interface LightningProps {
   speed?: number;
   intensity?: number;
   size?: number;
+  isMobile?: boolean;
 }
 
 const Lightning: React.FC<LightningProps> = ({
@@ -18,6 +19,7 @@ const Lightning: React.FC<LightningProps> = ({
   speed = 1,
   intensity = 1,
   size = 1,
+  isMobile = false,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -26,7 +28,7 @@ const Lightning: React.FC<LightningProps> = ({
     if (!canvas) return;
 
     const resizeCanvas = () => {
-      canvas.width = canvas.clientWidth;
+      canvas.width = isMobile ? window.innerWidth : canvas.clientWidth;
       canvas.height = canvas.clientHeight;
     };
     resizeCanvas();

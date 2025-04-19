@@ -9,6 +9,7 @@ export default function Background() {
       speed={1.2}
       intensity={1.8}
       size={1.4}
+      isMobile={true}
     />
   )
 }
