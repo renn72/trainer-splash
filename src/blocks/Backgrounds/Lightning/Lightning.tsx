@@ -29,6 +29,7 @@ const Lightning: React.FC<LightningProps> = ({
       canvas.width = canvas.clientWidth;
       canvas.height = canvas.clientHeight;
     };
+    console.log(canvas.clientWidth, canvas.clientHeight)
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
@@ -54,7 +55,7 @@ const Lightning: React.FC<LightningProps> = ({
       uniform float uSpeed;
       uniform float uIntensity;
       uniform float uSize;
-      
+
       #define OCTAVE_COUNT 10
 
       // Convert HSV to RGB.
@@ -89,7 +90,7 @@ const Lightning: React.FC<LightningProps> = ({
           float b = hash12(ip + vec2(1.0, 0.0));
           float c = hash12(ip + vec2(0.0, 1.0));
           float d = hash12(ip + vec2(1.0, 1.0));
-          
+
           vec2 t = smoothstep(0.0, 1.0, fp);
           return mix(mix(a, b, t.x), mix(c, d, t.x), t.y);
       }
@@ -113,10 +114,10 @@ const Lightning: React.FC<LightningProps> = ({
           uv.x *= iResolution.x / iResolution.y;
           // Apply horizontal offset.
           uv.x += uXOffset;
-          
+
           // Adjust uv based on size and animate with speed.
           uv += 2.0 * fbm(uv * uSize + 0.8 * iTime * uSpeed) - 1.0;
-          
+
           float dist = abs(uv.x);
           // Compute base color using hue.
           vec3 baseColor = hsv2rgb(vec3(uHue / 360.0, 0.7, 0.8));
