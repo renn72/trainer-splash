@@ -25,7 +25,7 @@ export default function EmailInput() {
     <div className='absolute top-1/2 left-1/2 z-99 -translate-x-1/2 -translate-y-1/2'>
       <div className='relative'>
         <BarbellIcon
-          size={512}
+          size={400}
           color='#00000080'
           className='opactiy-25 absolute top-1/2 left-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 rotate-135'
         />

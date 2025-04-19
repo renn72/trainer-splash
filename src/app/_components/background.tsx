@@ -5,7 +5,7 @@ export default function Background() {
   return (
     <Lightning
       hue={250}
-      xOffset={0}
+      xOffset={0.4}
       speed={1.2}
       intensity={1.8}
       size={1.4}
