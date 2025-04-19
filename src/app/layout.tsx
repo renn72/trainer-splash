@@ -1,29 +1,40 @@
-import "@/styles/globals.css";
+import '@/styles/globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
+import { type Metadata } from 'next'
+import { Geist } from 'next/font/google'
 
-import { type Metadata } from "next";
-import { Geist } from "next/font/google";
-
-import { TRPCReactProvider } from "@/trpc/react";
+import { TRPCReactProvider } from '@/trpc/react'
 
 export const metadata: Metadata = {
-  title: "Trainer",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
-  colorScheme: "dark",
-};
+  title: 'Trainer',
+  icons: [{ rel: 'icon', url: '/favicon.ico' }],
+  colorScheme: 'dark',
+}
 
 const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-});
+  subsets: ['latin'],
+  variable: '--font-geist-sans',
+})
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-theme="dark" className={`${geist.variable}`}>
+    <html
+      lang='en'
+      data-theme='dark'
+      className={`${geist.variable}`}
+    >
       <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='dark'
+          enableSystem
+          disableTransitionOnChange
+        >
+          <TRPCReactProvider>{children}</TRPCReactProvider>
+        </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
