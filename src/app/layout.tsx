@@ -8,7 +8,6 @@ import { TRPCReactProvider } from '@/trpc/react'
 export const metadata: Metadata = {
   title: 'Trainer',
   icons: [{ rel: 'icon', url: '/favicon.ico' }],
-  colorScheme: 'dark',
 }
 
 const geist = Geist({
@@ -22,8 +21,8 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      data-theme='dark'
       className={`${geist.variable}`}
+      suppressHydrationWarning
     >
       <body>
         <ThemeProvider
