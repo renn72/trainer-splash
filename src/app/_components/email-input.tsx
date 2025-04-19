@@ -56,7 +56,7 @@ export default function EmailInput() {
             />
             <button
               type='submit'
-              className='z-100 rounded-full bg-white/70 px-6 py-1 text-sm font-semibold transition hover:bg-white/20 lg:text-base'
+              className='z-100 rounded-full bg-white/70 px-6 py-1 text-sm font-semibold transition hover:bg-white/20 lg:text-base text-black'
               disabled={createEmail.isPending}
             >
               {createEmail.isPending ? 'Submitting...' : 'Submit'}
